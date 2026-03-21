@@ -59,7 +59,7 @@ export function Navbar() {
           <div className="w-8 h-8 bg-foreground text-background flex items-center justify-center rounded-lg font-black">
             {personalInfo.name.charAt(0)}
           </div>
-          <span>{personalInfo.name.split(' ')[0]}</span>
+          <span>{personalInfo.name.split('  ')}</span>
         </Link>
 
         {/* Desktop Nav */}

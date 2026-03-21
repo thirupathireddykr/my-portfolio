@@ -35,7 +35,7 @@ export function Hero() {
           animate="visible"
           className="max-w-4xl mx-auto flex flex-col items-center text-center"
         >
-          <motion.div variants={fadeInUp} className="mb-6">
+          {/* <motion.div variants={fadeInUp} className="mb-6">
             <span className="inline-flex items-center gap-2 py-1.5 px-3 rounded-full border border-border bg-muted/50 text-xs font-mono tracking-wider text-secondary mb-6 backdrop-blur-sm shadow-sm transition-colors hover:bg-muted/80 cursor-default">
               <span className="relative flex h-2 w-2">
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
@@ -43,7 +43,7 @@ export function Hero() {
               </span>
               AVAILABLE FOR NEW OPPORTUNITIES
             </span>
-          </motion.div>
+          </motion.div> */}
 
           <motion.h1
             variants={fadeInUp}

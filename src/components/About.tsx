@@ -56,7 +56,7 @@ export function About() {
             </motion.div>
 
             {/* Profile Picture Placeholder - Abstract Graphic */}
-            <motion.div variants={itemVariants} className="w-full max-w-sm mx-auto lg:mx-0 mt-12 transition-transform duration-500 hover:scale-[1.02]">
+            {/* <motion.div variants={itemVariants} className="w-full max-w-sm mx-auto lg:mx-0 mt-12 transition-transform duration-500 hover:scale-[1.02]">
               <SpotlightCard enableTilt={false} className="relative aspect-square group rounded-3xl overflow-hidden bg-background border border-border flex items-center justify-center p-8">
                 <div className="absolute inset-0 bg-gradient-to-tr from-accent/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="grid grid-cols-2 gap-4 w-full h-full">
@@ -70,7 +70,7 @@ export function About() {
                   <span className="text-6xl font-black text-white/50 tracking-tighter mix-blend-overlay">CODE</span>
                 </div>
               </SpotlightCard>
-            </motion.div>
+            </motion.div> */}
           </div>
 
           <div className="space-y-8">
@@ -81,12 +81,6 @@ export function About() {
                   {skill.name}
                 </span>
               ))}
-              <span className="px-5 py-2.5 bg-background border border-border rounded-full text-sm font-medium hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm hover:shadow-accent/10">GraphQL</span>
-              <span className="px-5 py-2.5 bg-background border border-border rounded-full text-sm font-medium hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm hover:shadow-accent/10">REST APIs</span>
-              <span className="px-5 py-2.5 bg-background border border-border rounded-full text-sm font-medium hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm hover:shadow-accent/10">PostgreSQL</span>
-              <span className="px-5 py-2.5 bg-background border border-border rounded-full text-sm font-medium hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm hover:shadow-accent/10">Redis</span>
-              <span className="px-5 py-2.5 bg-background border border-border rounded-full text-sm font-medium hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm hover:shadow-accent/10">Docker</span>
-              <span className="px-5 py-2.5 bg-background border border-border rounded-full text-sm font-medium hover:border-accent hover:text-accent transition-colors cursor-default shadow-sm hover:shadow-accent/10">AWS</span>
             </motion.div>
           </div>
         </motion.div>

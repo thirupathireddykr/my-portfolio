@@ -15,14 +15,22 @@ export const personalInfo = {
 };
 
 export const skills = [
-  { name: "React", category: "Frontend" },
-  { name: "TypeScript", category: "Languages" },
-  { name: "Tailwind CSS", category: "Frontend" },
-  { name: "Next.js", category: "Framework" },
-  { name: "Node.js", category: "Backend" },
-  { name: "Framer Motion", category: "Animation" },
-  { name: "GraphQL", category: "API" },
+  { name: "Java", category: "Languages" },
   { name: "Python", category: "Languages" },
+  { name: "JavaScript", category: "Languages" },
+  { name: "TypeScript", category: "Languages" },
+  { name: "HTML", category: "Frontend" },
+  { name: "CSS", category: "Frontend" },
+  { name: "React", category: "Frontend" },
+  { name: "Spring Boot", category: "Backend" },
+  { name: "Node.js", category: "Backend" },
+  { name: "MySQL", category: "Database" },
+  { name: "PostgreSQL", category: "Database" },
+  { name: "MongoDB", category: "Database" },
+  { name: "Docker", category: "DevOps" },
+  { name: "Kubernetes", category: "DevOps" },
+  { name: "AWS", category: "Cloud" },
+  { name: "GCP", category: "Cloud" },
 ];
 
 export const experience = [
