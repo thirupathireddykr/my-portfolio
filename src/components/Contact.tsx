@@ -4,17 +4,10 @@ import { Send, CheckCircle2, AlertCircle } from 'lucide-react';
 import { personalInfo } from '../data/portfolioData';
 import emailjs from '@emailjs/browser';
 
-// ─── EmailJS Configuration ───────────────────────────────────────────
-// You MUST set up your EmailJS account and replace these values:
-// 1. Go to https://www.emailjs.com/ and create a free account
-// 2. Add an Email Service (e.g. Gmail) → copy the Service ID
-// 3. Create an Email Template with variables: {{from_name}}, {{from_email}}, {{subject}}, {{message}}
-//    Set the "To Email" in the template to: thirupathireddykapa@gmail.com
-// 4. Copy your Public Key from Account → General
-const EMAILJS_SERVICE_ID = 'service_thirupathireddy';
-const EMAILJS_TEMPLATE_ID = 'template_odc3yfo';
-const EMAILJS_PUBLIC_KEY = 'F30Bjp8UxKbRbdrZr';
-// ─────────────────────────────────────────────────────────────────────
+// EmailJS credentials loaded from .env (VITE_ prefix required by Vite)
+const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
 export function Contact() {
    const formRef = useRef<HTMLFormElement>(null);
