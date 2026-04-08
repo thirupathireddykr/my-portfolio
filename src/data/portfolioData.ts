@@ -31,6 +31,7 @@ export const skills = [
   { name: "Kubernetes", category: "DevOps" },
   { name: "AWS", category: "Cloud" },
   { name: "GCP", category: "Cloud" },
+  { name: "GEN AI", category: "AI" },
 ];
 
 export const experience = [

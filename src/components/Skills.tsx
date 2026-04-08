@@ -1,62 +1,69 @@
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import { skills } from '../data/portfolioData';
 
-// Generate more skills for the marquee to scroll infinitely without gaps
-const marqueeSkills = [...skills, ...skills, ...skills, ...skills];
-const reverseMarqueeSkills = [...marqueeSkills].reverse();
-
 export function Skills() {
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: { opacity: 1, transition: { staggerChildren: 0.05 } }
+  };
+
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, scale: 0.8, filter: "blur(10px)" },
+    visible: {
+      opacity: 1,
+      scale: 1,
+      filter: "blur(0px)",
+      transition: {
+        type: "spring",
+        stiffness: 100,
+        damping: 15
+      }
+    }
+  };
+
   return (
-    <section id="skills" className="py-24 bg-muted/30 border-y border-border/50 overflow-hidden">
-      <div className="container mx-auto px-6 md:px-12 mb-16">
+    <section id="skills" className="py-32 relative overflow-hidden bg-background">
+      <div className="container mx-auto px-6 md:px-12 relative z-10">
         <motion.div
-           initial={{ opacity: 0, y: 20 }}
-           whileInView={{ opacity: 1, y: 0 }}
-           viewport={{ once: true }}
-           transition={{ duration: 0.6 }}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="mb-20 text-center"
         >
-          <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 text-center">Tech Stack</h2>
-          <div className="w-20 h-1 bg-accent rounded-full mx-auto mb-8"></div>
-          <p className="text-secondary text-center max-w-2xl mx-auto text-lg text-balance">
-            A comprehensive list of technologies and tools I work with on a daily basis to build modern web applications.
+          <span className="inline-block py-1 px-3 rounded-full bg-accent/10 border border-accent/20 text-accent text-sm font-medium tracking-wider mb-4">
+            EXPERTISE
+          </span>
+          <h2 className="text-4xl md:text-6xl font-black tracking-tight mb-6">Tech Arsenal</h2>
+          <p className="text-secondary max-w-2xl mx-auto text-lg md:text-xl font-light">
+            The specialized tools and technologies I use to build scalable, high-performance applications.
           </p>
         </motion.div>
-      </div>
 
-      {/* Infinite scrolling marquee wrapper */}
-      <div className="relative flex flex-col gap-6 w-full max-w-[100vw] overflow-hidden mix-blend-difference pb-8">
-        {/* Left to right transparent masks */}
-        <div className="absolute inset-0 z-10 pointer-events-none bg-gradient-to-r from-muted/30 via-transparent to-muted/30 w-full" />
-        
-        {/* Row 1 - Left to Right */}
-        <div className="flex w-fit">
-           <motion.div 
-             className="flex gap-6 pr-6 whitespace-nowrap"
-             animate={{ x: ["0%", "-50%"] }}
-             transition={{ duration: 40, ease: "linear", repeat: Infinity }}
-           >
-              {marqueeSkills.map((skill, i) => (
-                <div key={`${skill.name}-${i}`} className="flex items-center gap-3 px-8 py-4 bg-background border border-border rounded-2xl">
-                   <span className="text-xl font-medium tracking-tight whitespace-nowrap">{skill.name}</span>
-                </div>
-              ))}
-           </motion.div>
-        </div>
-
-        {/* Row 2 - Right to Left */}
-        <div className="flex w-fit ml-[-50%]">
-           <motion.div 
-             className="flex gap-6 pr-6 whitespace-nowrap"
-             animate={{ x: ["-50%", "0%"] }}
-             transition={{ duration: 50, ease: "linear", repeat: Infinity }}
-           >
-              {reverseMarqueeSkills.map((skill, i) => (
-                <div key={`rev-${skill.name}-${i}`} className="flex items-center gap-3 px-8 py-4 bg-background border border-border rounded-2xl">
-                   <span className="text-xl font-medium tracking-tight whitespace-nowrap">{skill.name}</span>
-                </div>
-              ))}
-           </motion.div>
-        </div>
+        <motion.div
+          className="flex flex-wrap items-center justify-center gap-4 md:gap-6 max-w-6xl mx-auto"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+        >
+          {skills.map((skill) => (
+            <motion.div
+              key={skill.name}
+              variants={itemVariants}
+              whileHover={{ y: -8, scale: 1.05 }}
+              className="group relative flex flex-col items-center justify-center px-8 py-6 bg-muted/30 backdrop-blur-xl border border-border/50 rounded-2xl cursor-default transition-all duration-300 hover:border-accent/50 hover:bg-muted/60 shadow-lg hover:shadow-[0_0_40px_rgba(var(--accent-color),0.15)] overflow-hidden"
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <span className="text-xs font-mono text-accent/60 tracking-widest uppercase mb-2 group-hover:text-accent transition-colors">
+                {skill.category}
+              </span>
+              <span className="text-md md:text-lg font-bold tracking-tight text-foreground/90 group-hover:text-foreground transition-colors">
+                {skill.name}
+              </span>
+            </motion.div>
+          ))}
+        </motion.div>
       </div>
     </section>
   );
