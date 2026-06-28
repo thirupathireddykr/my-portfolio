@@ -6,7 +6,7 @@ import { ThemeProvider } from './hooks/useTheme'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <ThemeProvider defaultTheme="dark" storageKey="portfolio-theme">
+    <ThemeProvider defaultTheme="light" storageKey="portfolio-theme-v2">
       <App />
     </ThemeProvider>
   </StrictMode>,

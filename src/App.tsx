@@ -6,13 +6,11 @@ import { Skills } from './components/Skills';
 import { Experience } from './components/Experience';
 import { Contact } from './components/Contact';
 import { Footer } from './components/Footer';
-import { CustomCursor } from './components/CustomCursor';
 import { ScrollProgress } from './components/ScrollProgress';
 
 function App() {
   return (
     <div className="min-h-screen bg-background text-foreground font-sans selection:bg-accent/30 selection:text-foreground">
-      <CustomCursor />
       <ScrollProgress />
       <Navbar />
       
